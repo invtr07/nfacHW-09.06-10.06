@@ -1,14 +1,14 @@
 $(document).ready(function(){
      
-     let background =  $(".switch").css("background-color");
-
-     background.click(function(){ 
-          if(background==="white"){
-               console.log("dark")
-               background = "dark";
+     let background =  $("body");
+     
+     $("#customSwitches").click(function(){ 
+          if(background["background-color"]=="white"){
+               console.log("dark");
+               // background.style["background-color"] == "dark";
           } else {
-               console.log("white")
-               background = "white";
+               // console.log("white");
+               // background.style["background-color"] == "white";
           }
      });
 
