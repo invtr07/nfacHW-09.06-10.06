@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+     //здесь я пытаюсь сделать смену цвета
      $(".switch").click(function(){
 
           if($("body").css("background-color", "white")){
