@@ -1,14 +1,50 @@
 $(document).ready(function(){
-     $(".post").click(function(){
+     
+     let background =  $(".switch").css("background-color");
 
-          if($(".img-W").val()&&
-          $(".img-H").val()&&
-          $(".img-N").val()){
-               
-          }
-          else{
-               alert("ohuel?");
+     background.click(function(){ 
+          if(background==="white"){
+               console.log("dark")
+               background = "dark";
+          } else {
+               console.log("white")
+               background = "white";
           }
      });
-     
+
+     $(".post").click(function(refresh){
+
+          let width=$(".img-W").val();
+          let height = $(".img-H").val();
+          let colors = $(".img-N").val();
+
+          if(width && height && colors){
+               //used formula of calculation image's size from the internet
+               let total = width* height * 3;
+               total = (total / 1024 / 1024).toFixed(2);
+
+               if(total<= 10){
+                    let message=`<p class="message">Your image is ${total} Mb, and it is acceptible</p><img alt="success" src="approved.svg">`
+                    
+                    let upload= '<div class="mb-3"><label for="formFile" class="form-label">Upload your image</label><input class="form-control" type="file" id="formFile"></div>';
+
+                    let messbox=$('.m-box').append(message, upload);
+                    
+                    $(".form-control").change(function(e){
+                         const image = this.files[0];
+                         image.show();
+                         e.preventDefault();
+                    });
+
+               }else{
+                    let error=`<p class="message">Your image size is ${total} Mb should weigh no more than 10 Mb</p><img alt="error" src="declined.svg">`
+                    
+                    let errbox= $('.m-box').append(error);
+               }
+          }
+          else{
+               alert("You must fill out all fields for calculation!");
+          }
+          refresh.preventDefault();
+     });
 });
