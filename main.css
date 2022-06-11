@@ -35,7 +35,7 @@ nav{
      flex-grow: 1;
      border: 2px black solid;
 }
-h3{
+h2{
      display: flex;
      justify-content: center;
 }
@@ -43,7 +43,7 @@ h3{
 .user-input{
      display: flex;
      flex-direction: column;
-     border: 2px cornflowerblue solid;
+     border: 2px grey solid;
      margin: 50px;
      padding: 10px;
 }
@@ -62,9 +62,25 @@ h3{
      width: 100%;
 }
 button {
-     width: 50%;
+     width: 20%;
+     background-color: chocolate;
+     color: white;
+     font-weight: bold;
+     font-size: 16pt;
+     border-radius: 45px;
+     /* animation-name: button-color; 
+     animation-duration: 0.5s; */
 }
+/* @keyframes button-color {
+     from {background-color: chocolate;}
+     to {background-color: darkgoldenrod;}
+} */
 a:link, a:visited, a:hover, a:active{
      color: black;
      font-size: 18pt;
+}
+.output{
+     margin: 50px;
+     width: 75%;
+     border: 2px black solid;
 }

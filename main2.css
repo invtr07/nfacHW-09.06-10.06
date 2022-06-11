@@ -1,0 +1,19 @@
+body{
+     margin: 0;
+     min-height: 100vh;
+}
+.img-W,.img-H,.img-N{
+     width: 50%;
+}
+.navigation{
+
+     border: none;
+     width: 100%;
+     background-color:honeydew !important;
+     justify-content: center;
+}
+.post{
+     width: 10%;
+     border-radius: 25px;
+     margin-left: 10%;
+}
