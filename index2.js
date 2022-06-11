@@ -3,12 +3,13 @@ $(document).ready(function(){
      //здесь я пытаюсь сделать смену цвета
      $(".switch").click(function(){
 
-          if($("body").css("background-color", "white")){
+          if($("body").css("background-color", "#FFFFFF")){
                console.log("works!");
-               $("body").css("background-color","dark");
-          } else {
+               $("body").css("background-color","#A9A9A9");
+               
+          } else if($("body").css("background-color", "#A9A9A9")){
                console.log("white");
-               // body.style["background-color"] == "white";
+               $("body").css("background-color","#FFFFFF");
           }
      });
 
