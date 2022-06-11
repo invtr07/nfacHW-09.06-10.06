@@ -1,15 +1,16 @@
 $(document).ready(function(){
+     let theme = localStorage.getItem("mode");
+     $("body").addClass(theme);
 
-     //здесь я пытаюсь сделать смену цвета
      $(".switch").click(function(){
-
-          if($("body").css("background-color", "#FFFFFF")){
-               console.log("works!");
-               $("body").css("background-color","#A9A9A9");
-               
-          } else if($("body").css("background-color", "#A9A9A9")){
-               console.log("white");
-               $("body").css("background-color","#FFFFFF");
+          if($("body").hasClass("grey")){
+               localStorage.setItem("mode","light");
+               $("body").removeClass("grey");
+               $("body").addClass("light");
+          } else {
+               localStorage.setItem("mode","grey");
+               $("body").removeClass("light");
+               $("body").addClass("grey");
           }
      });
 
@@ -31,11 +32,12 @@ $(document).ready(function(){
 
                     let messbox=$('.m-box').append(message, upload);
                     
-                    $(".form-control").change(function(e){
-                         const image = this.files[0];
-                         image.show();
-                         e.preventDefault();
-                    });
+                    document.cookie="Image "+total+ "Mb; expires=Sat, 12 Jun 2022 20:01:00 GMT";
+                    // $(".form-control").change(function(e){
+                    //      const image = this.files[0];
+                    //      image.show();
+                    //      e.preventDefault();
+                    // });
 
                }else{
                     let error=`<p class="message">Your image size is ${total} Mb should weigh no more than 10 Mb</p><img alt="error" src="declined.svg">`

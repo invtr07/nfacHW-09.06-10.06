@@ -49,3 +49,10 @@ img {
 .textboxes{
      flex-grow: 1;
 }
+
+.grey{
+     background-color: grey;
+}
+.light{
+     background-color: white;
+}
