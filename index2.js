@@ -32,7 +32,9 @@ $(document).ready(function(){
 
                     let messbox=$('.m-box').append(message, upload);
                     
-                    document.cookie="Image "+total+ "Mb; expires=Sat, 12 Jun 2022 20:01:00 GMT";
+                    //куки не удаляется почему-то, мб мой лайв сервер глючит
+                    document.cookie="File= Image "+total+ "Mb; expires=Sun, 12 Jun 2022 20:50:00 GMT";
+                    
                     // $(".form-control").change(function(e){
                     //      const image = this.files[0];
                     //      image.show();
